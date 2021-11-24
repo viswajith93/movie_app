@@ -2,6 +2,12 @@
 
 A new Flutter project.
 
+# screenshots
+
+![Simulator Screen Shot - iPhone 13 - 2021-11-24 at 21 50 41](https://user-images.githubusercontent.com/67163719/143276356-3bdac5e4-20f6-4e10-adce-4bd0561081db.png)
+
+![Simulator Screen Shot - iPhone 13 - 2021-11-24 at 21 52 01](https://user-images.githubusercontent.com/67163719/143276256-1c80736a-554e-4b33-804c-37f5d8ba9c6e.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

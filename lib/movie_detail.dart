@@ -65,7 +65,7 @@ class MovieDetail extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '${movie.popularity}/10',
+                          '${movie.averageVote}/10',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

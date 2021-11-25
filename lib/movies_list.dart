@@ -5,11 +5,10 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_app/movie_detail.dart';
 
+import 'constant.dart';
 import 'model/Movie.dart';
 
 class MovieList extends StatelessWidget {
-  final Color primaryColor = const Color(0xff3C3261);
-
   Future<List<Movie>> getData() async {
     var data = await getMovies();
     var jsonMoviesList = data['results'];
@@ -27,10 +26,6 @@ class MovieList extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0.3,
         centerTitle: true,
-        leading: Icon(
-          Icons.arrow_back,
-          color: primaryColor,
-        ),
         title: Text(
           'Movies',
           style: TextStyle(
@@ -38,18 +33,10 @@ class MovieList extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        actions: [
-          Icon(
-            Icons.menu,
-            color: primaryColor,
-          )
-        ],
       ),
       body: Column(
         children: [
-          MovieTitle(
-            primaryColor,
-          ),
+          MovieTitle(),
           FutureBuilder(
             future: getData(),
             builder: (context, AsyncSnapshot<List<Movie>> snapshot) {
@@ -59,11 +46,10 @@ class MovieList extends StatelessWidget {
                 var movies = snapshot.data ?? List.empty();
                 return Expanded(
                   child: ListView.separated(
-                    itemCount: movies.length ?? 0,
+                    itemCount: movies.length,
                     itemBuilder: (context, index) {
                       return MovieCell(
                         movies[index],
-                        primaryColor,
                       );
                     },
                     separatorBuilder: (context, index) {
@@ -72,8 +58,10 @@ class MovieList extends StatelessWidget {
                   ),
                 );
               }
-              return Text(
-                'Sorry! Something went wrong',
+              return Center(
+                child: Text(
+                  'Sorry! Something went wrong',
+                ),
               );
             },
           )
@@ -84,9 +72,7 @@ class MovieList extends StatelessWidget {
 }
 
 class MovieTitle extends StatelessWidget {
-  final Color primaryColor;
-
-  const MovieTitle(this.primaryColor);
+  const MovieTitle();
 
   @override
   Widget build(BuildContext context) {
@@ -110,11 +96,7 @@ class MovieTitle extends StatelessWidget {
 class MovieCell extends StatelessWidget {
   final Movie movie;
 
-  final Color primaryColor;
-  final Color secondaryColor = const Color(0xff8886A4);
-  final String imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
-
-  const MovieCell(this.movie, this.primaryColor);
+  const MovieCell(this.movie);
 
   @override
   Widget build(BuildContext context) {

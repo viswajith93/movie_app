@@ -1,14 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-
+import 'constant.dart';
 import 'model/Movie.dart';
 
 class MovieDetail extends StatelessWidget {
   final Movie movie;
-
-  final Color primaryColor = const Color(0xff3C3261);
-  final String imageBaseUrl = 'https://image.tmdb.org/t/p/w500/';
 
   const MovieDetail(this.movie);
 

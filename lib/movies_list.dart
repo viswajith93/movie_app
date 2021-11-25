@@ -40,9 +40,10 @@ class MovieList extends StatelessWidget {
           FutureBuilder(
             future: getData(),
             builder: (context, AsyncSnapshot<List<Movie>> snapshot) {
-              if (!snapshot.hasData) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
                 return CircularProgressIndicator();
-              } else if (snapshot.hasData) {
+              } else if (snapshot.connectionState == ConnectionState.done &&
+                  snapshot.hasData) {
                 var movies = snapshot.data ?? List.empty();
                 return Expanded(
                   child: ListView.separated(
@@ -168,9 +169,13 @@ class MovieCell extends StatelessWidget {
 
 Future<Map> getMovies() async {
   var movieKey = dotenv.env['MOVIE_KEY'];
-  var url = 'https://api.themoviedb.org/3/movie/top_rated?api_key=$movieKey';
-  http.Response response = await http.get(
-    Uri.parse(url),
-  );
-  return json.decode(response.body);
+  var url = '$topRatedUrl$movieKey';
+  try {
+    http.Response response = await http.get(Uri.parse(url));
+    print(response.body);
+    return json.decode(response.body);
+  } on Exception catch (e) {
+    print(e);
+    return Future.error(e);
+  }
 }

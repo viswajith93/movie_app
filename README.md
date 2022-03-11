@@ -4,9 +4,9 @@ A new Flutter project.
 
 # screenshots
 
-![Simulator Screen Shot - iPhone 13 - 2021-11-24 at 21 50 41](https://user-images.githubusercontent.com/67163719/143276356-3bdac5e4-20f6-4e10-adce-4bd0561081db.png)
+![Screenshot_20220311_113713](https://user-images.githubusercontent.com/67163719/157812080-74be1967-2383-44bb-a134-c92971bedc1d.png)
+![Screenshot_20220311_113830](https://user-images.githubusercontent.com/67163719/157812170-599b19d5-17c6-472a-9d2f-d0ece704dde3.png)
 
-![Simulator Screen Shot - iPhone 13 - 2021-11-24 at 21 52 01](https://user-images.githubusercontent.com/67163719/143276256-1c80736a-554e-4b33-804c-37f5d8ba9c6e.png)
 
 ## Getting Started
 

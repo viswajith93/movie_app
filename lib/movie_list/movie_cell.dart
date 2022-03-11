@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant.dart';
+import '../common/constant.dart';
 import '../model/Movie.dart';
 import '../movie_detail.dart';
 
@@ -15,11 +15,11 @@ class MovieCell extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Container(
-            width: 200.0,
-            height: 150.0,
-            margin: EdgeInsets.symmetric(horizontal: 8.0),
+            width: 120.0,
+            height: 10.0,
+            margin: EdgeInsets.only(left: 8.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
+              borderRadius: BorderRadius.circular(5.0),
               image: DecorationImage(
                 image: NetworkImage(
                   '$imageBaseUrl${movie.posterPath}',
@@ -28,7 +28,7 @@ class MovieCell extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  color: primaryColor,
+                  color: Colors.grey.withOpacity(0.5),
                   blurRadius: 5.0,
                   offset: new Offset(2.0, 5.0),
                 )

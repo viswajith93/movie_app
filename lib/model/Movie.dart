@@ -1,12 +1,12 @@
 class Movie {
-  final int id;
-  final bool adult;
-  final String title;
-  final String originalTitle;
-  final String overview;
+  final int? id;
+  final bool? adult;
+  final String? title;
+  final String? originalTitle;
+  final String? overview;
   final double averageVote;
-  final String posterPath;
-  final String releaseDate;
+  final String? posterPath;
+  final String? releaseDate;
 
   Movie({
     required this.id,

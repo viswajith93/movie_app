@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:movie_app/movies_list.dart';
+import 'package:movie_app/movie_list/movies_list_home.dart';
 
 Future main() async {
   await dotenv.load(fileName: '.env');
@@ -17,7 +17,7 @@ class MovieApp extends StatelessWidget {
         fontFamily: 'Arvo',
       ),
       title: 'Flutter Movie app',
-      home: MovieList(),
+      home: MovieListHome(),
     );
   }
 }

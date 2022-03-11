@@ -1,12 +1,12 @@
 class Movie {
-  final int id;
-  final bool adult;
-  final String title;
-  final String originalTitle;
-  final String overview;
-  final double popularity;
-  final String posterPath;
-  final String releaseDate;
+  final int? id;
+  final bool? adult;
+  final String? title;
+  final String? originalTitle;
+  final String? overview;
+  final double averageVote;
+  final String? posterPath;
+  final String? releaseDate;
 
   Movie({
     required this.id,
@@ -14,7 +14,7 @@ class Movie {
     required this.title,
     required this.originalTitle,
     required this.overview,
-    required this.popularity,
+    required this.averageVote,
     required this.posterPath,
     required this.releaseDate,
   });
@@ -26,7 +26,7 @@ class Movie {
         title: moviesJson['title'],
         originalTitle: moviesJson['original_title'],
         overview: moviesJson['overview'],
-        popularity: moviesJson['vote_average'],
+        averageVote: moviesJson['vote_average'].toDouble(),
         posterPath: moviesJson['poster_path'],
         releaseDate: moviesJson['release_date']);
   }
